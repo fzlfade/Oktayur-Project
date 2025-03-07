@@ -1,1 +1,0 @@
-# Oktayur-Project
