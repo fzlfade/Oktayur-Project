@@ -57,19 +57,30 @@
       </label>
       <p class="text-gray-500 text-base ml-5">Description</p>
      </div>
+     <div class="mb-4 relative">
+      <h3 class="font-bold mb-2">Harga</h3>
+      <input id="priceRange" class="w-full accent-black" max="100" min="0" type="range" value="0" />
+      
+      <div class="absolute top-0 right-0 mt-1 mr-2 text-sm">
+        Rp <span id="price">0</span>
+      </div>
     </div>
-    <div class="mb-4">
-     <h3 class="font-bold mb-2">
-      Harga
-     </h3>
-     <input class="w-full accent-black" max="100" min="0" type="range"/>
-     <div class="flex justify-between text-sm">
-      <span>
-       Rp 0
-      </span>
-      <span>
-       Rp 100
-      </span>
+    
+    <script>
+      const priceRange = document.getElementById('priceRange');
+      const price = document.getElementById('price');
+    
+      function formatCurrency(value) {
+        return value.toLocaleString('id-ID');
+      }
+    
+      priceRange.addEventListener('input', function() {
+        const currentValue = priceRange.value * 1000;
+        
+        price.textContent = formatCurrency(currentValue);
+      });
+    </script>
+        
      </div>
     </div>
     <div class="mb-4">
@@ -132,7 +143,7 @@
      </div>
     </div>
     <div class="grid grid-cols-3 gap-4">
-        <a href="detail-terong.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Terong" class="w-full h-60 object-cover rounded-lg mb-2" height="400" src="image/terong.jpeg" width="300"/>
             <h3 class="font-bold">Terong</h3>
@@ -140,7 +151,7 @@
           </div>
         </a>
       
-        <a href="detail-wortel.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Wortel" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/wortel.jpeg" width="300"/>
             <h3 class="font-bold">Wortel</h3>
@@ -148,7 +159,7 @@
           </div>
         </a>
       
-        <a href="detail-tomat.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Tomat" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/tomat.jpeg" width="300"/>
             <h3 class="font-bold">Tomat</h3>
@@ -156,7 +167,7 @@
           </div>
         </a>
       
-        <a href="detail-cabai.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Cabai" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/cabai.jpeg" width="300"/>
             <h3 class="font-bold">Cabai</h3>
@@ -164,7 +175,7 @@
           </div>
         </a>
       
-        <a href="detail-bawang-merah.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Bawang Merah" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/bawang merah.jpg" width="300"/>
             <h3 class="font-bold">Bawang Merah</h3>
@@ -172,7 +183,7 @@
           </div>
         </a>
       
-        <a href="detail-bawang-putih.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Bawang Putih" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/bawang putih.jpeg" width="300"/>
             <h3 class="font-bold">Bawang Putih</h3>
@@ -180,7 +191,7 @@
           </div>
         </a>
       
-        <a href="detail-timun.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Timun" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/buah-timun.jpg" width="300"/>
             <h3 class="font-bold">Timun</h3>
@@ -188,7 +199,7 @@
           </div>
         </a>
       
-        <a href="detail-seledri.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Seledri" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/sledri.jpeg" width="300"/>
             <h3 class="font-bold">Seledri</h3>
@@ -196,7 +207,7 @@
           </div>
         </a>
       
-        <a href="detail-jagung.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Jagung" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/jagung.jpg" width="300"/>
             <h3 class="font-bold">Jagung</h3>
@@ -204,7 +215,7 @@
           </div>
         </a>
       
-        <a href="detail-bayam.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Bayam" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/bayam.jpeg" width="300"/>
             <h3 class="font-bold">Bayam</h3>
@@ -212,7 +223,7 @@
           </div>
         </a>
       
-        <a href="detail-sawi.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Sawi" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/sawi.jpeg" width="300"/>
             <h3 class="font-bold">Sawi</h3>
@@ -220,7 +231,7 @@
           </div>
         </a>
       
-        <a href="detail-kembangkol.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Kembang Kol" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/kembangkol.jpeg" width="300"/>
             <h3 class="font-bold">Kembang Kol</h3>
@@ -228,7 +239,7 @@
           </div>
         </a>
       
-        <a href="detail-kangkung.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Kangkung" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/kangkung.jpeg" width="300"/>
             <h3 class="font-bold">Kangkung</h3>
@@ -236,7 +247,7 @@
           </div>
         </a>
       
-        <a href="detail-brokoli.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Brokoli" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/brokoli.jpeg" width="300"/>
             <h3 class="font-bold">Brokoli</h3>
@@ -244,7 +255,7 @@
           </div>
         </a>
       
-        <a href="detail-kacangpanjang.html">
+        <a href="halaman2.html">
           <div class="bg-white p-4 rounded-lg shadow-lg cursor-pointer">
             <img alt="Kacang Panjang" class="w-full h-60 object-cover rounded-lg mb-2" height="300" src="image/kacang panjang.jpeg" width="300"/>
             <h3 class="font-bold">Kacang Panjang</h3>
