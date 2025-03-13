@@ -4,12 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Penjual</title>
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome (ikon) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-
-  <!-- Style untuk Toggle Switch -->
   <style>
     .switch {
       position: relative;
@@ -42,7 +38,7 @@
       border-radius: 50%;
     }
     input:checked + .slider {
-      background-color: #4ade80; /* Warna hijau (Tailwind: green-400) */
+      background-color: #4ade80;
     }
     input:focus + .slider {
       box-shadow: 0 0 1px #4ade80;
@@ -70,7 +66,6 @@
     </div>
   </div>
   
-  <!-- Kontainer utama -->
   <div class="flex h-screen gap-2">
     <!-- sidebar -->
     <div class="w-1/5 bg-white shadow-md p-4 border-2 rounded-xl">
@@ -90,16 +85,16 @@
           <a href="/penjual/dashboard.html">
             <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer">
               <i class="fas fa-home mr-2 text-xl text-gray-600"></i>
-              Halaman Utama
+              Dashboard
             </li>
           </a>
           <a href="/penjual/produk.html">
-            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer">
-              <i class="fas fa-box mr-2 text-xl text-gray-600"></i>
+            <li class="py-2 px-4 hover:bg-gray-200 text-gray-500 bg-gray-200 rounded cursor-pointer">
+              <i class="fas fa-box mr-2 text-xl"></i>
               Produk
             </li>
           </a>
-          <a href="">
+          <a href="/penjual/pengaturan.html">
             <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer">
               <i class="fas fa-cog mr-2 text-xl text-gray-600"></i>
               Pengaturan
@@ -111,7 +106,6 @@
     
     <!-- Halaman Produk -->
     <div class="flex-1 p-6 bg-white border-2 rounded-xl overflow-y-auto">
-      <!-- Judul & Tombol Tambah Produk -->
       <div class="flex justify-between items-center mb-4">
         <h1 class="text-3xl font-bold">Daftar Produk</h1>
         <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-bold">
@@ -119,7 +113,6 @@
         </button>
       </div>
 
-      <!-- Tab -->
       <div class="flex space-x-4 mb-6 border-b pb-2">
         <a href="#" class="text-green-600 font-semibold border-b-2 border-green-600 pb-2">
           Semua Produk (66)
@@ -174,7 +167,7 @@
                 <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600">
               </td>
               <td class="px-4 py-3 flex items-center gap-3">
-                <img src="https://via.placeholder.com/50" alt="Sawi" class="w-12 h-12 object-cover rounded-md">
+                <img src="https://cdn.rri.co.id/berita/Bengkalis/o/172014453…Image_2024-07-05_at_08.43.35/7fox9hv6qxxe0vl.jpeg" alt="Sawi" class="w-12 h-12 object-cover rounded-md">
                 <span class="font-semibold">Sawi</span>
               </td>
               <td class="px-4 py-3 text-sm text-gray-700">Baik</td>
