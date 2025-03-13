@@ -1,49 +1,28 @@
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Sign In
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
- </head>
- <body class="flex items-center justify-center min-h-screen bg-gray-100">
-  <div class="relative w-[320px] h-[359px] p-16 bg-white rounded-lg shadow-md">
-   <img alt="Background image of various vegetables" class="absolute inset-0 object-cover w-full h-full rounded-lg opacity-70" height="400" src="https://ik.imagekit.io/waters2021/sehataqua/uploads/20240207083413_original.jpg?tr=w-660,h-371,q-50,fo-auto,f-auto" width="400"/>
-   <div class="absolute inset-0 bg-black opacity-65 rounded-lg">
-   </div>
-   <div class="relative z-10">
-    <form class="space-y-6">
-     <div>
-      <label class="block text-sm font-medium text-white" for="email">
-       Email
-      </label>
-      <div class="flex justify-center">
-        <input class="w-[271px] h-[40px] px-4 py-2 mt-1 text-gray-900 bg-white border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" id="email" placeholder="Email" type="email"/>
-      </div>
-     </div>
-     <div>
-      <label class="block text-sm font-medium text-white" for="password">
-       Password
-      </label>
-      <div class="flex justify-center">
-        <input class="block w-[272px] h-[40px] px-4 py-2 mt-1 text-gray-900 bg-white border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" id="Password" placeholder="Password" type="Password"/>
-      </div>      
-     </div>
-     <div>
-        <a href="halaman-5.html" class="block text-center w-full px-4 py-2 text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-          Sign In
-        </a>
-      </div>      
-     <div class="text-center">
-      <a class="text-sm font-medium text-white hover:underline" href="#">
-       Forgot password?
-      </a>
-     </div>
-    </form>
-   </div>
-  </div>
- </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-cover" style="background-image: url('https://placehold.co/1920x1080?text=Background+image+of+various+vegetables');">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-80">
+        <form>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Email">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700">Password</label>
+                <input type="password" id="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Password">
+            </div>
+            <div class="mb-4">
+                <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">Sign In</button>
+            </div>
+            <div class="text-center">
+                <a href="#" class="text-gray-500 hover:text-gray-700">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+</body>
 </html>
