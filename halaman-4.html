@@ -1,1 +1,52 @@
-
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Registration Form
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="absolute inset-0">
+   <img alt="A variety of fresh vegetables including tomatoes, carrots, corn, and green beans" class="w-full h-full object-cover" height="1080" src="https://storage.googleapis.com/a1aa/image/VPI8tK2n-SX9veJlcZVd2-cdVQfk72ZdooP5j9Cqbd8.jpg" width="1920"/>
+   <div class="absolute inset-0 bg-black opacity-65">
+   </div>
+  </div>
+  <div class="relative z-10 bg-white p-8 rounded-lg shadow-lg max-w-xs w-full">
+   <form>
+    <div class="mb-4">
+     <label class="block text-gray-700" for="email">
+      Email
+     </label>
+     <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" id="email" placeholder="Email" type="email"/>
+    </div>
+    <div class="mb-4">
+     <label class="block text-gray-700" for="password">
+      Password
+     </label>
+     <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" id="password" placeholder="Password" type="password"/>
+    </div>
+    <div class="mb-4">
+     <label class="block text-gray-700" for="confirm-password">
+      Confirm Password
+     </label>
+     <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" id="confirm-password" placeholder="Confirm Password" type="password"/>
+    </div>
+    <div class="mb-4 flex items-center">
+     <input class="mr-2" id="remember-me" type="checkbox"/>
+     <label class="text-gray-700" for="remember-me">
+      Remember Me
+     </label>
+    </div>
+    <div>
+     <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600" type="submit">
+      Register
+     </button>
+    </div>
+   </form>
+  </div>
+ </body>
+</html>
