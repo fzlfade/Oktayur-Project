@@ -1,33 +1,20 @@
 <head>
     <link rel="stylesheet" href="/css/StyleProduk.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 
-<header class="site-header">
-    <h1 class="logo">Oktayur</h1>
-    <div class="search-container">
-      <div class="search-wrapper">
-        <input type="text" placeholder="Cari Produk" class="search-input" />
-        <div class="search-icon-wrapper">
-          <svg
-            width="51"
-            height="48"
-            viewBox="0 0 51 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="search-icon"
-          >
-            <path
-              d="M44.625 42L35.3812 33.3M40.375 22C40.375 30.8366 32.7638 38 23.375 38C13.9862 38 6.375 30.8366 6.375 22C6.375 13.1634 13.9862 6 23.375 6C32.7638 6 40.375 13.1634 40.375 22Z"
-              stroke="#1E1E1E"
-              stroke-width="1.6"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </div>
-      </div>
+  <!-- navbar -->
+  <div class="bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="flex gap-2">
+      <div class="text-2xl font-bold">Oktayur</div>
     </div>
-  </header>
+    <div class="flex w-3/4 items-center gap-2">
+      <input type="text" placeholder="Cari Produk" class="w-full p-2 shadow-md border rounded-full">
+      <i class="fas fa-search left-3 top-3 text-gray-500"></i>
+    </div>
+  </div>
   
   <main class="content-wrapper">
     <aside class="filter-sidebar">
