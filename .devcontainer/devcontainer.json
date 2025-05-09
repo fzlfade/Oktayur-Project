@@ -1,5 +1,5 @@
 {
-    "name": "Oktayur Dev Container",
+    "name": "Oktayur Sail Codespace",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
@@ -7,19 +7,11 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
-    "runArgs": [
-        "--privileged",
-        "--cap-add=SYS_ADMIN",
-        "--dns=8.8.8.8",
-        "--dns=8.8.4.4"
-    ],
-    "mounts": [
-        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
-    ],
-    "workspaceFolder": "/workspace",
     "dockerComposeFile": ["../docker-compose.yml"],
     "service": "laravel.test",
-    "forwardPorts": [80, 5173, 3306],
-    "postCreateCommand": "composer install && cp .env.example .env && php artisan key:generate",
+    "workspaceFolder": "/workspace",
+    "runArgs": ["--dns=8.8.8.8", "--dns=8.8.4.4"],
+    "forwardPorts": [80, 3306],
+    "postCreateCommand": "composer install && php artisan key:generate && php artisan migrate --force",
     "remoteUser": "vscode"
 }
