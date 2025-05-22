@@ -39,7 +39,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Auth::user()->products()->latest()->get();
+        $products = Auth::user()->products()->latest()->paginate(2); // 10 item per halaman
         return view('products.index', compact('products'));
     }
 }

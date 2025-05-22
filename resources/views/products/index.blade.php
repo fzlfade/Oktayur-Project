@@ -41,6 +41,9 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="mt-6 ml-6 mr-6 mb-6 ">
+            {{ $products->links() }}
+        </div>
     </div>
 </div>
 @endsection
