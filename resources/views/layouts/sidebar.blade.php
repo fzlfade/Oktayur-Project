@@ -18,12 +18,12 @@
                 Dashboard
             </li>
         </a>
-        <a href="{{ route('products.create') }}">
+        <!-- <a href="{{ route('products.create') }}">
             <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer @if(Request::is('products/create') || Request::routeIs('products.create')) bg-gray-200 text-gray-500 @else text-gray-600 @endif">
                 <i class="fas fa-plus-circle mr-2 text-xl"></i>
                 Tambah Produk
             </li>
-        </a>
+        </a> -->
         <a href="{{ route('products.index') }}">
             <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer @if(Request::is('products') || Request::is('products/*') && !Request::is('products/create')) bg-gray-200 text-gray-500 @else text-gray-600 @endif">
                 <i class="fas fa-box mr-2 text-xl"></i>
