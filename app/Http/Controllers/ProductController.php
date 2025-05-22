@@ -21,8 +21,8 @@ class ProductController extends Controller
             'deskripsi' => 'required|string',
             'harga' => 'required|numeric|min:0',
             'stok' => 'required|integer|min:0',
-            'kategori' => 'required|string|max:255',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'kategori' => 'required|in:Sayuran,Buah,Umbi', // Sesuaikan dengan kategori yang tersedia
+            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         if ($request->hasFile('gambar')) {
@@ -39,7 +39,20 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Auth::user()->products()->latest()->paginate(2); // 10 item per halaman
+        $products = Auth::user()->products()->latest()->paginate(10);
         return view('products.index', compact('products'));
+    } 
+
+    public function destroy(Product $product)
+    {
+    // Ensure the user owns the product
+    if ($product->user_id !== Auth::id()) {
+        abort(403, 'Unauthorized action.');
+    }
+
+    // Delete the product
+    $product->delete();
+
+    return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus!');
     }
 }

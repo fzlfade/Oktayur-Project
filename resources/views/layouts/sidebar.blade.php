@@ -13,26 +13,26 @@
 <nav class="mt-4 border-2 rounded-lg shadow-md">
     <ul>
         <a href="{{ route('dashboard-penjual') }}">
-            <li class="py-2 px-4 hover:bg-gray-200 text-gray-500 bg-gray-200 rounded cursor-pointer">
+            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer @if(Request::is('dashboard') || Request::is('dashboard-penjual/*')) bg-gray-200 text-gray-500 @else text-gray-600 @endif">
                 <i class="fas fa-home mr-2 text-xl"></i>
                 Dashboard
             </li>
         </a>
         <a href="{{ route('products.create') }}">
-            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer">
-                <i class="fas fa-plus-circle mr-2 text-xl text-gray-600"></i>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer @if(Request::is('products/create') || Request::routeIs('products.create')) bg-gray-200 text-gray-500 @else text-gray-600 @endif">
+                <i class="fas fa-plus-circle mr-2 text-xl"></i>
                 Tambah Produk
             </li>
         </a>
         <a href="{{ route('products.index') }}">
-            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer">
-                <i class="fas fa-box mr-2 text-xl text-gray-600"></i>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer @if(Request::is('products') || Request::is('products/*') && !Request::is('products/create')) bg-gray-200 text-gray-500 @else text-gray-600 @endif">
+                <i class="fas fa-box mr-2 text-xl"></i>
                 Daftar Produk
             </li>
         </a>
         <a href="#">
-            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer">
-                <i class="fas fa-cog mr-2 text-xl text-gray-600"></i>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded cursor-pointer @if(Request::is('pengaturan')) bg-gray-200 text-gray-500 @else text-gray-600 @endif">
+                <i class="fas fa-cog mr-2 text-xl"></i>
                 Pengaturan
             </li>
         </a>
