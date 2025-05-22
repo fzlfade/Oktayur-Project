@@ -23,6 +23,12 @@
       <i class="fas fa-bell text-xl text-gray-600">
       </i>
       <div class="w-10 h-10 bg-blue-500 rounded-full"></div>
+          <form action="{{ route('logout') }}" method="POST">
+      @csrf
+      <button type="submit" class="bg-red-500 text-white p-2 rounded">
+          Logout
+      </button>
+    </form>
     </div>
   </div>
   

@@ -14,22 +14,45 @@
 <body class="flex items-center justify-center min-h-screen bg-cover bg-center" style="background-image: url('https://4.bp.blogspot.com/-QVa1ZZibEuU/Uq1WXbK5uyI/AAAAAAAABdc/E3gRDa5vpkU/s1600/vegetables.jpg');">
     <div class="bg-blur p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 class="text-3xl font-bold text-center mb-6 text-white">Register</h1>
-        <form>
+        
+        @if($errors->any())
+            <div class="mb-4 p-3 bg-red-100 text-red-700 rounded-full text-sm">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form method="POST" action="{{ route('register.post') }}">
+            @csrf
             <div class="mb-4">
-                <input type="text" placeholder="Create a shop name" class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
+                <input type="text" name="shop_name" placeholder="Create a shop name" 
+                       class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+                       value="{{ old('shop_name') }}">
             </div>
             <div class="mb-4">
-                <input type="email" placeholder="Enter email" class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
+                <input type="email" name="email" placeholder="Enter email" 
+                       class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+                       value="{{ old('email') }}">
             </div>
             <div class="mb-4">
-                <input type="password" placeholder="Enter password" class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
+                <input type="password" name="password" placeholder="Enter password" 
+                       class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
             </div>
             <div class="mb-6">
-                <input type="password" placeholder="Re-enter password" class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
+                <input type="password" name="password_confirmation" placeholder="Re-enter password" 
+                       class="w-full p-3 rounded-full border border-white bg-transparent text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
             </div>
-            <button type="submit" class="w-full p-3 rounded-full bg-white text-black font-bold hover:bg-gray-300 transition duration-200">Register</button>
+            <button type="submit" 
+                    class="w-full p-3 rounded-full bg-white text-black font-bold hover:bg-gray-300 transition duration-200">
+                Register
+            </button>
         </form>
-        <p class="text-center text-white mt-4">Already have an account? <a href="/login" class="font-bold text-white">Login</a></p>
+        <p class="text-center text-white mt-4">Already have an account? 
+            <a href="/login" class="font-bold text-white">Login</a>
+        </p>
     </div>
 </body>
 </html>
