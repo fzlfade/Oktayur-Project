@@ -43,7 +43,7 @@
             <label class="block text-gray-700 text-sm font-bold mb-2">Gambar Produk</label>
             <input type="file" name="gambar" class="w-full p-2 border rounded @error('gambar') border-red-500 @enderror">
     
-            @error('nama_produk')
+            @error('gambar')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
         </div>

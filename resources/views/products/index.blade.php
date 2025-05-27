@@ -45,8 +45,8 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" 
-                                class="text-red-500 hover:text-red-700"
-                                onclick="return confirm('Hapus produk ini?')">
+                                class="text-red-500 hover:text-red-700 delete-btn">
+                                
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
@@ -67,4 +67,31 @@
 <div class="mt-6">
     {{ $products->links() }}
 </div>
+
+@push('scripts')
+<script>
+document.querySelectorAll('.delete-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const form = this.closest('form');
+        
+        Swal.fire({
+            title: 'Hapus Produk?',
+            text: "Produk yang dihapus tidak bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            }
+        })
+    });
+});
+</script>
+@endpush
+
 @endsection

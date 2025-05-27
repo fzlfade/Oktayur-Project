@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Auth::user()->products()->latest()->paginate(10);
+        $products = Auth::user()->products()->latest()->paginate(5);
         return view('products.index', compact('products'));
     }
     public function create()
@@ -26,7 +26,7 @@ class ProductController extends Controller
             'deskripsi' => 'required|string',
             'harga' => 'required|numeric|min:0',
             'stok' => 'required|integer|min:0',
-            'kategori' => 'required|in:Sayuran,Buah,Umbi', // Sesuaikan dengan kategori yang tersedia
+            'kategori' => 'required|in:Sayuran,Buah,Umbi', 
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
