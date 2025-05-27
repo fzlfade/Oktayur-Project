@@ -4,7 +4,7 @@
 @section('title', 'Daftar Produk')
 
 @section('content')
-<div class="flex justify-between items-center mb-6">
+<div class="flex px-6 py-3 justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">Daftar Produk</h2>
     <a href="{{ route('products.create') }}" 
        class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition">
@@ -12,7 +12,7 @@
     </a>
 </div>
 
-<div class="bg-white rounded-lg shadow overflow-hidden">
+<div class="bg-white  rounded-lg shadow overflow-hidden">
     <table class="w-full">
         <thead class="bg-gray-50">
             <tr>
