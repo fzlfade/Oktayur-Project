@@ -90,4 +90,70 @@ public function update(Request $request, Product $product)
     return redirect()->route('products.index')
                      ->with('success', 'Produk berhasil diperbarui!');
 }
+
+public function customerIndex(Request $request)
+{
+    // Ambil parameter filter dari request
+    $filters = [
+        'search' => $request->input('search'),
+        'categories' => $request->input('categories', []),
+        'min_price' => $request->input('min_price', 0),
+        'max_price' => $request->input('max_price', 1000000),
+        'sort' => $request->input('sort', 'popular'),
+        'conditions' => $request->input('conditions', []),
+    ];
+
+    // Query dasar
+    $query = Product::query();
+
+    // Filter pencarian
+    if ($filters['search']) {
+        $query->where('nama_produk', 'like', '%'.$filters['search'].'%');
+    }
+
+    // Filter kategori
+    if (!empty($filters['categories'])) {
+        $query->whereIn('kategori', $filters['categories']);
+    }
+
+    // Filter harga
+    $query->whereBetween('harga', [
+        $filters['min_price'], 
+        $filters['max_price']
+    ]);
+
+    // Filter kondisi
+    if (in_array('organic', $filters['conditions'])) {
+        $query->where('is_organic', true);
+    }
+    if (in_array('fresh', $filters['conditions'])) {
+        $query->where('is_fresh', true);
+    }
+
+    // Sorting
+    switch ($filters['sort']) {
+        case 'low_price':
+            $query->orderBy('harga');
+            break;
+        case 'high_price':
+            $query->orderByDesc('harga');
+            break;
+        case 'rating':
+            $query->orderByDesc('rating');
+            break;
+        case 'newest':
+            $query->orderByDesc('created_at');
+            break;
+        default:
+            $query->orderByDesc('created_at');
+    }
+
+    // Paginasi
+    $products = $query->paginate(12);
+
+    // Kategori unik untuk filter
+    $categories = Product::distinct()->pluck('kategori');
+
+    return view('products.customer_index', compact('products', 'filters', 'categories'));
+}
 }

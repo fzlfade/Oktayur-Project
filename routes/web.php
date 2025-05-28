@@ -28,6 +28,8 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/produk', [ProductController::class, 'customerIndex'])->name('products.customer.index');
+
 Route::middleware('auth')->group(function () {
     //Seller Routes
     Route::get('/pengaturan', [SellerController::class, 'edit'])->name('seller.edit');
