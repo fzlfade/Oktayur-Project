@@ -167,10 +167,6 @@
                     <span class="text-gray-600">Bergabung:</span>
                     <span class="font-medium text-gray-800">{{ Auth::user()->created_at->format('d M Y') }}</span>
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-600">Status:</span>
-                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-lg text-xs font-medium">Aktif</span>
-                </div>
             </div>
         </div>
 
