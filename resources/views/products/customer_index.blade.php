@@ -25,10 +25,12 @@
 
 <nav class="bg-white shadow-md py-4 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center sticky top-0 z-50">
         <div class="flex items-center mb-4 md:mb-0">
-            <div class="text-2xl md:text-3xl font-bold text-green-600 flex items-center">
-                <i class="fas fa-leaf mr-2"></i>
-                Oktayur
-            </div>
+            <a href="/">
+                <div class="text-2xl md:text-3xl font-bold text-green-600 flex items-center">
+                    <i class="fas fa-leaf mr-2"></i>
+                    Oktayur
+                </div>
+            </a>
         </div>
         
         <form method="GET" action="{{ route('products.customer.index') }}" class="relative w-full md:w-1/3 mb-4 md:mb-0">
@@ -50,7 +52,6 @@
     </nav>
 
 <main class="container mx-auto p-4 flex flex-col md:flex-row gap-6">
-    <!-- Filter Sidebar -->
     <aside class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow-md overflow-y-auto">
         <form method="GET" action="{{ route('products.customer.index') }}">
             <input type="hidden" name="search" value="{{ $filters['search'] }}">
@@ -151,7 +152,6 @@
         </form>
     </aside>
     
-    <!-- Products Grid -->
     <section class="flex-1">
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold text-gray-800">Daftar Sayuran Segar</h2>
@@ -230,7 +230,6 @@
                 @endforeach
             </div>
             
-            <!-- Pagination -->
             <div class="mt-8">
                 {{ $products->appends($filters)->links('vendor.pagination.tailwind') }}
             </div>
@@ -243,14 +242,12 @@
 
 @section('scripts')
 <script>
-    // Fungsi untuk menampilkan jumlah produk di cart
     function updateCartCount(count) {
         document.querySelectorAll('.cart-count').forEach(el => {
             el.textContent = count;
         });
     }
     
-    // Contoh inisialisasi (bisa diambil dari backend)
     updateCartCount(3);
 </script>
 @endsection

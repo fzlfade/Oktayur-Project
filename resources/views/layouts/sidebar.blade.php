@@ -1,4 +1,3 @@
-<!-- Sidebar -->
 <div class="flex items-center gap-4 p-4 rounded-xl shadow-md bg-gradient-to-r from-green-50 to-emerald-50 mb-6">
     <div class="flex-shrink-0">
         @if(Auth::user()->profile_photo_path)

@@ -21,7 +21,6 @@
 <main class="container mx-auto p-4">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="md:flex">
-            <!-- Gambar Produk -->
             <div class="md:w-1/2 p-6 flex items-center justify-center bg-gray-50">
                 <img 
                     class="w-full h-96 object-contain" 
@@ -30,7 +29,6 @@
                 >
             </div>
             
-            <!-- Detail Produk -->
             <div class="md:w-1/2 p-8">
                 <div class="flex justify-between items-start mb-4">
                     <div>
@@ -83,7 +81,6 @@
                     </div>
                 </div>
                 
-                <!-- Tombol Beli -->
                 <div class="mt-10">
                     <a 
                         href="https://wa.me/{{ $seller->whatsapp }}?text=Saya%20tertarik%20untuk%20membeli%20produk%20{{ $product->nama_produk }}%20dengan%20harga%20Rp%20{{ number_format($product->harga,0,',','.') }}%20per%20kg.%20Apakah%20masih%20tersedia?" 

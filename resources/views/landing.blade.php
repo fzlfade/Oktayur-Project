@@ -76,13 +76,14 @@
     </style>
 </head>
 <body class="font-poppins bg-green-800">
-    <!-- Navbar -->
     <nav class="bg-white shadow-md py-3 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center sticky top-0 z-50">
         <div class="flex items-center mb-4 md:mb-0">
-            <div class="text-2xl md:text-3xl font-bold text-green-600 flex items-center">
-                <i class="fas fa-leaf mr-2"></i>
-                Oktayur
-            </div>
+            <a href="/">
+                <div class="text-2xl md:text-3xl font-bold text-green-600 flex items-center">
+                    <i class="fas fa-leaf mr-2"></i>
+                    Oktayur
+                </div>
+            </a>
         </div>
         
        
@@ -95,7 +96,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section flex items-center justify-center text-center">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto">
@@ -243,7 +243,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -306,7 +305,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-16 bg-green-600 text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Memulai Pengalaman Belanja Sayur yang Lebih Baik?</h2>
@@ -320,7 +318,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white pt-12 pb-8">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -383,7 +380,6 @@
 
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

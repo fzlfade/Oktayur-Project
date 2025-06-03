@@ -100,7 +100,6 @@ public function update(Request $request, Product $product)
 
 public function customerIndex(Request $request)
 {
-    // Ambil parameter filter dari request
     $filters = [
         'search' => $request->input('search'),
         'categories' => $request->input('categories', []),
@@ -110,26 +109,21 @@ public function customerIndex(Request $request)
         'conditions' => $request->input('conditions', []),
     ];
 
-    // Query dasar
     $query = Product::query();
 
-    // Filter pencarian
     if ($filters['search']) {
         $query->where('nama_produk', 'like', '%'.$filters['search'].'%');
     }
 
-    // Filter kategori
     if (!empty($filters['categories'])) {
         $query->whereIn('kategori', $filters['categories']);
     }
 
-    // Filter harga
     $query->whereBetween('harga', [
         $filters['min_price'], 
         $filters['max_price']
     ]);
 
-    // Filter kondisi
     if (in_array('organic', $filters['conditions'])) {
         $query->where('is_organic', true);
     }
@@ -137,7 +131,6 @@ public function customerIndex(Request $request)
         $query->where('is_fresh', true);
     }
 
-    // Sorting
     switch ($filters['sort']) {
         case 'low_price':
             $query->orderBy('harga');
@@ -155,10 +148,8 @@ public function customerIndex(Request $request)
             $query->orderByDesc('created_at');
     }
 
-    // Paginasi
     $products = $query->paginate(12);
 
-    // Kategori unik untuk filter
     $categories = Product::distinct()->pluck('kategori');
 
     return view('products.customer_index', compact('products', 'filters', 'categories'));

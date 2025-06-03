@@ -8,7 +8,6 @@
     <p class="text-gray-600 mt-2">Kelola informasi dan pengaturan toko Anda</p>
 </div>
 
-<!-- Alert Success/Error Messages -->
 @if(session('success'))
 <div class="mb-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-4">
     <div class="flex items-center">
@@ -32,7 +31,6 @@
 @endif
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    <!-- Profile Settings Card -->
     <div class="lg:col-span-2">
         <div class="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:shadow-xl">
             <div class="flex items-center mb-6">
@@ -49,7 +47,6 @@
                 @csrf
                 @method('PUT')
                 
-                <!-- Profile Photo Section -->
                 <div class="mb-6 p-4 bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl border border-gray-100">
                     <label class="block text-gray-700 text-sm font-bold mb-3">Foto Profil</label>
                     <div class="flex items-center space-x-6">
@@ -82,7 +79,6 @@
                     @enderror
                 </div>
                 
-                <!-- Form Fields -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-gray-700 text-sm font-bold mb-2">
@@ -148,9 +144,7 @@
         </div>
     </div>
 
-    <!-- Side Panel -->
     <div class="space-y-6">
-        <!-- Account Info Card -->
         <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl shadow-lg p-6 border border-green-100 transform transition-all duration-300 hover:shadow-xl">
             <div class="flex items-center mb-4">
                 <div class="p-3 bg-green-100 rounded-xl mr-3">
@@ -170,7 +164,6 @@
             </div>
         </div>
 
-        <!-- Danger Zone Card -->
         <div class="bg-gradient-to-r from-red-50 to-rose-50 rounded-2xl shadow-lg p-6 border border-red-100 transform transition-all duration-300 hover:shadow-xl">
             <div class="flex items-center mb-4">
                 <div class="p-3 bg-red-100 rounded-xl mr-3">
@@ -239,7 +232,6 @@ function confirmDeleteAccount() {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            // Show loading
             Swal.fire({
                 title: 'Menghapus Akun...',
                 text: 'Mohon tunggu sebentar',
@@ -252,13 +244,11 @@ function confirmDeleteAccount() {
                 }
             });
             
-            // Submit form
             document.getElementById('deleteAccountForm').submit();
         }
     });
 }
 
-// SweetAlert untuk success/error messages
 @if(session('success'))
     Swal.fire({
         title: 'Berhasil!',

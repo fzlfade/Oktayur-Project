@@ -85,7 +85,6 @@
 </head>
 <body class="flex items-center justify-center p-4">
     <div class="auth-container p-8 max-w-md w-full">
-        <!-- Logo -->
         <div class="text-center mb-8">
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500 text-white mb-4">
                 <i class="fas fa-leaf text-2xl"></i>

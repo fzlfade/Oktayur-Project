@@ -50,21 +50,17 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    <!-- Navbar -->
     <div class="bg-white shadow-lg py-4 px-6 flex flex-col md:flex-row justify-between items-center sticky top-0 z-50">
         <div class="flex items-center gap-3 mb-4 md:mb-0">
-            <div class="text-2xl font-bold text-green-600 flex items-center">
-                <i class="fas fa-leaf mr-2"></i> Oktayur
-            </div>
+            <a href="/">
+                <div class="text-2xl font-bold text-green-600 flex items-center">
+                    <i class="fas fa-leaf mr-2"></i> Oktayur
+                </div>
+            </a>
             <div class="text-sm font-bold text-gray-500">Penjual</div>
         </div>
         
         <div class="flex items-center space-x-6">
-            <a href="#" class="relative text-gray-600 hover:text-green-600">
-                <i class="fas fa-bell text-xl"></i>
-                <span class="absolute top-0 right-0 transform translate-x-1 -translate-y-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
-            </a>
-            
             <div class="flex items-center">
                 <div class="w-10 h-10 rounded-full bg-green-200 flex items-center justify-center text-green-800 font-bold mr-3">
                     @if(Auth::user()->profile_photo_path)
@@ -86,12 +82,10 @@
     </div>
 
     <div class="flex flex-col md:flex-row min-h-screen gap-4 p-4">
-        <!-- Sidebar -->
         <div class="sidebar w-full md:w-64 bg-white shadow-lg rounded-xl p-4">
             @include('layouts.sidebar')
         </div>
 
-        <!-- Main Content -->
         <div class="main-content flex-1 bg-white shadow-lg rounded-xl p-6 overflow-y-auto">
             @yield('content')
         </div>

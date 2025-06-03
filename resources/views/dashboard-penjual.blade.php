@@ -9,12 +9,11 @@
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-    <!-- Card 1 -->
     <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl shadow-lg p-6 border border-green-100 transform transition-all duration-300 hover:-translate-y-1">
         <div class="flex justify-between items-start">
             <div>
-                <p class="text-gray-600 text-sm font-medium">Stok Perlu Diupdate</p>
-                <p class="text-2xl font-bold text-gray-800 mt-2">9</p>
+                <p class="text-gray-600 text-sm font-medium">Total Items</p>
+                <p class="text-2xl font-bold text-gray-800 mt-2">2</p>
             </div>
             <div class="p-3 bg-green-100 rounded-xl">
                 <i class="fas fa-exclamation-circle text-green-600 text-xl"></i>
@@ -28,7 +27,6 @@
         </div>
     </div>
     
-    <!-- Card 2 -->
     <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl shadow-lg p-6 border border-blue-100 transform transition-all duration-300 hover:-translate-y-1">
         <div class="flex justify-between items-start">
             <div>
@@ -47,7 +45,6 @@
         </div>
     </div>
     
-    <!-- Card 3 -->
     <div class="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl shadow-lg p-6 border border-amber-100 transform transition-all duration-300 hover:-translate-y-1">
         <div class="flex justify-between items-start">
             <div>
@@ -66,7 +63,6 @@
         </div>
     </div>
     
-    <!-- Card 4 -->
     <div class="bg-gradient-to-r from-purple-50 to-violet-50 rounded-2xl shadow-lg p-6 border border-purple-100 transform transition-all duration-300 hover:-translate-y-1">
         <div class="flex justify-between items-start">
             <div>

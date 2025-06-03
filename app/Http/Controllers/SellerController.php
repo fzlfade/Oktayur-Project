@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class SellerController extends Controller
 {
-    // SellerController.php
     public function edit(User $user)
     {
         return view('sellers.settings', compact('user'));
@@ -34,14 +33,11 @@ class SellerController extends Controller
             'profile_photo.max' => 'Ukuran maksimal 2MB',
         ]);
 
-        // Handle profile photo upload
         if ($request->hasFile('profile_photo')) {
-            // Delete old photo if exists
             if ($user->profile_photo_path) {
                 Storage::delete($user->profile_photo_path);
             }
             
-            // Store new photo
             $path = $request->file('profile_photo')->store('profile-photos', 'public');
             $validated['profile_photo_path'] = $path;
         }
