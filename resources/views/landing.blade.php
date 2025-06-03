@@ -89,7 +89,7 @@
         
         <div class="flex items-center space-x-4">
 
-            <a href="/login" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full font-medium transition duration-300 flex items-center">
+            <a href="/dashboard" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full font-medium transition duration-300 flex items-center">
                 <i class="fas fa-store mr-2"></i> Mitra Oktayur
             </a>
         </div>
@@ -106,7 +106,7 @@
                     Dapatkan sayuran segar setiap hari dengan kualitas terbaik dan harga terjangkau. Dapurmu butuh sayurku!
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#products" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300 transform hover:scale-105">
+                    <a href="/produk" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300 transform hover:scale-105">
                         Belanja Sekarang
                     </a>
                     <a href="#features" class="bg-white hover:bg-gray-100 text-green-600 px-8 py-3 rounded-full text-lg font-medium transition duration-300 border border-green-500">
@@ -117,8 +117,7 @@
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section id="products" class="py-16 bg-gray-50">
+    <!-- <section id="products" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Sayuran Terpopuler</h2>
@@ -126,7 +125,6 @@
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Product 1 -->
                 <div class="vegetable-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
@@ -144,7 +142,6 @@
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
                 <div class="vegetable-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" 
@@ -161,7 +158,6 @@
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
                 <div class="vegetable-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1522184216316-3c25379f9760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
@@ -179,7 +175,6 @@
                     </div>
                 </div>
                 
-                <!-- Product 4 -->
                 <div class="vegetable-card bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
@@ -203,9 +198,8 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Features Section -->
     <section id="features" class="py-16 bg-green-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">

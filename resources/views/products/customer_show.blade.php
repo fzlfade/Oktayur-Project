@@ -19,41 +19,79 @@
 </nav>
 
 <main class="container mx-auto p-4">
-    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="md:flex">
-            <div class="md:flex-shrink-0">
-                <img class="h-64 w-full object-cover md:w-64" src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama_produk }}">
+            <!-- Gambar Produk -->
+            <div class="md:w-1/2 p-6 flex items-center justify-center bg-gray-50">
+                <img 
+                    class="w-full h-96 object-contain" 
+                    src="{{ asset('storage/' . $product->gambar) }}" 
+                    alt="{{ $product->nama_produk }}"
+                >
             </div>
-            <div class="p-8">
-                <div class="uppercase tracking-wide text-sm text-green-600 font-semibold">{{ $product->kategori }}</div>
-                <h1 class="block mt-1 text-2xl font-bold text-gray-900">{{ $product->nama_produk }}</h1>
-                <p class="mt-2 text-gray-600">{{ $product->deskripsi }}</p>
-                <div class="mt-4">
-                    <span class="text-2xl font-bold text-green-600">Rp {{ number_format($product->harga, 0, ',', '.') }}</span>
-                    <span class="text-sm text-gray-500">/kg</span>
-                </div>
-                <div class="mt-2 flex items-center">
-                    <div class="flex text-yellow-400">
+            
+            <!-- Detail Produk -->
+            <div class="md:w-1/2 p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">{{ $product->nama_produk }}</h1>
+                        <div class="inline-block bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full mt-2">
+                            <i class="fas fa-leaf mr-1"></i> Fresh
+                        </div>
+                    </div>
+                    <div class="flex items-center text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
+                        <span class="ml-2 text-sm text-gray-500">{{ $product->rating }}</span>
                     </div>
-                    <span class="ml-2 text-sm text-gray-500">{{ $product->rating }}</span>
                 </div>
-                <div class="mt-4">
-                    <p class="text-gray-700"><i class="fas fa-store mr-2"></i>{{ $product->shop_name }}</p>
-                    <p class="text-gray-700 mt-1"><i class="fas fa-location-dot mr-2"></i>{{ $product->distance }} km</p>
-                    <p class="text-gray-700 mt-1"><i class="fas fa-phone mr-2"></i>{{ $seller->whatsapp }}</p>
+                
+                <div class="my-6">
+                    <div class="text-3xl font-bold text-green-600">
+                        Rp {{ number_format($product->harga, 0, ',', '.') }}
+                        <span class="text-base font-normal text-gray-500">/kg</span>
+                    </div>
                 </div>
-                <div class="mt-6">
+                
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Deskripsi Produk</h3>
+                    <p class="text-gray-600">{{ $product->deskripsi }}</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-4 mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Informasi Toko</h3>
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <i class="fas fa-store text-gray-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">{{ $product->shop_name }}</p>
+                            <p class="text-sm text-gray-500">{{ $product->distance }} km dari lokasi Anda</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <i class="fas fa-phone text-gray-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">{{ $seller->whatsapp }}</p>
+                            <p class="text-sm text-gray-500">Hubungi penjual via WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tombol Beli -->
+                <div class="mt-10">
                     <a 
                         href="https://wa.me/{{ $seller->whatsapp }}?text=Saya%20tertarik%20untuk%20membeli%20produk%20{{ $product->nama_produk }}%20dengan%20harga%20Rp%20{{ number_format($product->harga,0,',','.') }}%20per%20kg.%20Apakah%20masih%20tersedia?" 
                         target="_blank"
-                        class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full flex items-center justify-center"
+                        class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                     >
-                        <i class="fab fa-whatsapp mr-2 text-xl"></i> Beli Sekarang
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                        <span class="text-xl">Beli Sekarang</span>
                     </a>
                 </div>
             </div>

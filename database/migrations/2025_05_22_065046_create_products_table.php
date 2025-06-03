@@ -20,6 +20,7 @@ return new class extends Migration
         $table->string('kategori');
         $table->string('gambar')->nullable();
         $table->foreignId('user_id')->constrained();
+        $table->foreignId('shop_id')->constrained('users');
         $table->timestamps();
     });
 }

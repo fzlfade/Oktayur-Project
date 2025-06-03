@@ -30,6 +30,8 @@ class ProductController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
+        $validated['shop_id'] = Auth::id();
+
         if ($request->hasFile('gambar')) {
             $path = $request->file('gambar')->store('products', 'public'); 
             $validated['gambar'] = $path;

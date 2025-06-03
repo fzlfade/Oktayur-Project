@@ -16,7 +16,8 @@ class Product extends Model
         'stok',
         'kategori',
         'gambar',
-        'user_id'
+        'user_id',
+        'shop_id'
     ];
  
     public function user()
