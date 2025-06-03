@@ -29,6 +29,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/produk', [ProductController::class, 'customerIndex'])->name('products.customer.index');
+Route::get('/produk/{product}', [ProductController::class, 'customerShow'])->name('products.customer.show');
 
 Route::middleware('auth')->group(function () {
     //Seller Routes

@@ -42,7 +42,12 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Produk berhasil ditambahkan!');
     }
 
- 
+    public function customerShow(Product $product)
+    {
+        $seller = $product->user;
+        
+        return view('products.customer_show', compact('product', 'seller'));
+    }
 
     public function destroy(Product $product)
     {

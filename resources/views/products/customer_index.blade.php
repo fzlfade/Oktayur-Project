@@ -195,7 +195,7 @@
         @else
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @foreach($products as $product)
-                <a href="" class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                <a href="{{ route('products.customer.show', $product) }}" class="product-card bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="relative">
                         <img 
                             src="{{ asset('storage/' . $product->gambar) }}" 
